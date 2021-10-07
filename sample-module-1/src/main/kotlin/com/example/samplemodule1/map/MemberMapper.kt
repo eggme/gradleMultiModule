@@ -11,6 +11,6 @@ import org.springframework.stereotype.Component
 @Component
 interface MemberMapper {
 
-    fun toMember(memberDTO: MemberDTO): Member
-    fun toDTO(member: Member): MemberDTO
+    fun toMember(memberDTO: MemberDTO?): Member
+    fun toDTO(member: Member?): MemberDTO
 }

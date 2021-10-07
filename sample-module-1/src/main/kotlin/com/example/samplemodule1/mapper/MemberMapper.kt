@@ -9,4 +9,6 @@ import org.springframework.stereotype.Component
 interface MemberMapper {
 
     fun getMemberList(): List<Member>
+
+    fun updateMember(member: Member): Long
 }

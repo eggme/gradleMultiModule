@@ -1,6 +1,9 @@
+tasks.getByName<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar") {
+    enabled = true
+}
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation(project(":sample-core"))
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
@@ -22,6 +25,8 @@ dependencies {
     api("com.fasterxml.jackson.core:jackson-databind:2.12.5")
     //runtimeOnly("mysql:mysql-connector-java")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+    testImplementation("org.springframework.security:spring-security-test")
 }
 
 dependencyManagement {

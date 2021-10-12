@@ -1,14 +1,14 @@
 package com.example.samplemodule1.mapper
 
-import com.example.samplemodule1.entity.Member
-import org.apache.ibatis.annotations.Mapper
+import com.example.samplecore.entity.MemberEntity
+import org.mapstruct.Mapper
 import org.springframework.stereotype.Component
 
 @Mapper
 @Component
 interface MemberMapper {
 
-    fun getMemberList(): List<Member>
+    fun getMemberList(): MutableList<MemberEntity>
 
-    fun updateMember(member: Member): Long
+    fun updateMember(member: MemberEntity)
 }

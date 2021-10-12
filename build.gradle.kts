@@ -1,6 +1,11 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.springframework.boot.gradle.tasks.bundling.BootJar
 
+tasks.getByName<BootJar>("bootJar") {
+    enabled = false
+}
+
+
 buildscript {
     repositories{
         mavenCentral()
@@ -26,6 +31,10 @@ repositories {
 }
 
 allprojects{
+
+    group = "com.example"
+    version = "0.0.1-SNAPSHOT"
+
     tasks.withType<JavaCompile> {
         sourceCompatibility = "8"
         targetCompatibility = "8"
@@ -53,9 +62,6 @@ subprojects{
         mavenCentral()
         maven { url = uri("https://repo.spring.io/milestone") }
     }
-    group = "com.example"
-    version = "0.0.1-SNAPSHOT"
-    val implementation by configurations
 
     apply {
         plugin("java")
@@ -68,20 +74,5 @@ subprojects{
         plugin("io.spring.dependency-management")
     }
 }
-
-tasks.getByName<BootJar>("bootJar") {
-    enabled = false
-}
-
-//group = "com.example"
-//version = "0.0.1-SNAPSHOT"
-//java.sourceCompatibility = JavaVersion.VERSION_1_8
-//
-//dependencies {
-//    implementation("org.springframework.boot:spring-boot-starter")
-//    implementation("org.jetbrains.kotlin:kotlin-reflect")
-//    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-//    testImplementation("org.springframework.boot:spring-boot-starter-test")
-//}
 
 

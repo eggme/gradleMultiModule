@@ -14,22 +14,22 @@ import javax.transaction.Transactional
 @ExtendWith(SpringExtension::class)
 @SpringBootTest
 internal class MemberServiceTest (
-    @Autowired var memberService: MemberService,
-    @Autowired var memberRepository: MemberRepository
+//    @Autowired var memberService: MemberService,
+//    @Autowired var memberRepository: MemberRepository
         ){
 
         @Test
         @Transactional
         fun updateMemberTest() {
-            val savedMember = memberRepository.findById(13).get()
-            savedMember.name = "상승준"
-            savedMember.password = MemberPassword("123444445")
-            savedMember.address = "광주광역시"
-            println(savedMember)
-
-
-            val updatedMember = memberService.updateMember(savedMember)
-            println("updateMember $updatedMember")
+//            val savedMember = memberRepository.findById(13).get()
+//            savedMember.name = "상승준"
+//            savedMember.password = MemberPassword("123444445")
+//            savedMember.address = "광주광역시"
+//            println(savedMember)
+//
+//
+//            val updatedMember = memberService.updateMember(savedMember)
+//            println("updateMember $updatedMember")
         }
 
 }

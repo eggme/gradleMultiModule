@@ -11,7 +11,7 @@ import javax.persistence.*
 
 @Entity @Table(name="MEMBER")
 data class Member (
-    @Id @GeneratedValue var id: Long = 0L,
+    @Id @GeneratedValue @Column(name="mno") var mno: Long = 0L,
     ){
     var email: String? = null
     @Column(length = 20) var name: String? = null
@@ -22,6 +22,7 @@ data class Member (
     /* JsonArray Convert 테스트용 */
     @Convert(converter = JsonArrayConverter::class) @Column(name="messages") var messages: JsonArray? = null
     /* ManyToOne 테스트용 */
+    @ManyToOne(cascade = [CascadeType.ALL]) @JoinColumn(name="eno") var event: Event? = null
     /* OneToMany 테스트용 */
     @Column(length = 200) var address: String? = null
     @CreatedDate @Column(name = "create_at") var createAt: LocalDateTime? = null

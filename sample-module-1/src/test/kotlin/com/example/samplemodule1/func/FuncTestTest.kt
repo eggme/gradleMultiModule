@@ -20,19 +20,21 @@ import java.security.MessageDigest
 @WebMvcTest
 @DataJpaTest
 class FuncTestTest(
-    @Autowired var memberService: MemberService,
-    @Autowired var memberRepository: MemberRepository
+//    @Autowired var memberService: MemberService,
+//    @Autowired var memberRepository: MemberRepository
 ){
 
     @Test
     fun funTest(){
-        val savedMember = memberRepository.findById(13).get()
-        savedMember.name = "승승준"
-        savedMember.password = MemberPassword("1234444")
 
-
-        val updatedMember = memberService.updateMember(savedMember)
-        println(updatedMember)
+//        val savedMember = memberRepository.findById(13).get()
+//        savedMember.name = "승승준"
+//        savedMember.password = MemberPassword("1234444")
+//
+//
+//
+//        val updatedMember = memberService.updateMember(savedMember)
+//        println(updatedMember)
     //        val func = FuncTest()
 //        println(func.apply("승준") { func.increase(3) })
 //

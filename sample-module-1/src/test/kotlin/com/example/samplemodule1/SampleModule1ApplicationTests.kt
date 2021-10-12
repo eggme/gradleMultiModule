@@ -8,6 +8,7 @@ class SampleModule1ApplicationTests {
 
     @Test
     fun contextLoads() {
+        println(150000.times(10).div(100))
     }
 
 }

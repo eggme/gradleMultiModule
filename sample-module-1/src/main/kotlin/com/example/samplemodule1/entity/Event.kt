@@ -6,10 +6,8 @@ import java.time.LocalDateTime
 import javax.persistence.*
 
 @Entity
-data class Event (@Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Long? = 0){
+data class Event (@Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Column(name="eno") var eno: Long? = 0){
     var name: String? = null
-
-    @OneToMany(mappedBy = "event", cascade = [CascadeType.ALL]) var members: MutableList<Member>? = null;
     @CreatedDate var createAt: LocalDateTime? = null;
     @LastModifiedDate var modifyAt: LocalDateTime? = null;
 }

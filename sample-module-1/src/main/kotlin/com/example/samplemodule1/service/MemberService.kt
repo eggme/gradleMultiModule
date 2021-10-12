@@ -45,7 +45,7 @@ class MemberService (
 
         fun updateMember(member: Member): MemberDTO {
                 val updatedMemberId = memberMybatis.updateMember(member)
-                val savedMember = memberRepository.findByIdOrNull(member.id)
+                val savedMember = memberRepository.findByIdOrNull(member.mno)
                 return memberMapper.toDTO(savedMember)
         }
 
